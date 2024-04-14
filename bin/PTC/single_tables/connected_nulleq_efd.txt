@@ -1,0 +1,4 @@
+# connected.csv; nCol: 3; nRow: 24758; nulleq
+atom_id*atom_id2 --> bond_id
+atom_id*bond_id --> atom_id2
+atom_id2*bond_id --> atom_id

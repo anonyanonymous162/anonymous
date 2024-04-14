@@ -1,0 +1,2 @@
+# molecule.csv; nCol: 2; nRow: 343; nulleq
+molecule_id --> label

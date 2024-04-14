@@ -1,0 +1,3 @@
+# atom.csv; nCol: 3; nRow: 12333; nulleq
+atom_id --> molecule_id
+atom_id --> element

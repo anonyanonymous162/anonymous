@@ -1,0 +1,3 @@
+# bond.csv; nCol: 3; nRow: 12379; nulleq
+bond_id --> molecule_id
+bond_id --> bond_type
