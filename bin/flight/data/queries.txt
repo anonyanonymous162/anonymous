@@ -1,0 +1,19 @@
+-- queries
+
+-- Join flight_info and state
+select * from flight_info f, state s where f.OriginStateName = s.state;
+
+1000 rows
+
+-- Auxiliary queries that are used for building the witness matrix
+
+Create view flight_info_rp as select (rowid -1) as id, * from flight_info;
+Create view state_rp as select (rowid -1) as id, * from state;
+
+.header off
+
+.output w_flight_info.csv
+Select f.id from flight_info_rp f, state s where f.OriginStateName = s.state;
+
+.output w_state.csv
+Select s.id from flight_info f, state_rp s where f.OriginStateName = s.state;

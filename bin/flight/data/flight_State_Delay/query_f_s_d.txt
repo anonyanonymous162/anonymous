@@ -1,0 +1,48 @@
+
+-- Load data
+.mode csv
+.header on
+.import flight_info.csv flight_info
+.import DelayGroupInfo.csv delayGroupInfo
+.import state.csv state
+
+
+
+
+-- queries
+
+Join attributes:
+f.DepartureDelayGroups is 34
+d.Delay_Group_ID is 0
+f.OriginalStateName is 16
+S.state is 0
+
+-- Join flight_info and delayGroupInfo
+select * from flight_info f, state s, delayGroupInfo d where (f.OriginStateName = s.state) and (f.DepartureDelayGroups = d.Delay_Group_ID);
+
+1000 rows
+
+-- Auxiliary queries that are used for building the witness matrix
+
+Create view flight_info_rp as select (rowid -1) as id, * from flight_info;
+Create view  delayGroupInfo_rp as select (rowid -1) as id, * from delayGroupInfo;
+Create view state_rp as select (rowid -1) as id, * from state;
+
+.header off
+
+.output w_flight_info.csv
+Select f.id from flight_info_rp f, state s, delayGroupInfo d where (f.OriginStateName = s.state) and (f.DepartureDelayGroups = d.Delay_Group_ID);
+
+.output w_delay_info.csv
+Select d.id from flight_info f, state s, delayGroupInfo_rp d where (f.OriginStateName = s.state) and (f.DepartureDelayGroups = d.Delay_Group_ID);
+
+.output w_state.csv
+Select s.id from flight_info f, state_rp s, delayGroupInfo d where (f.OriginStateName = s.state) and (f.DepartureDelayGroups = d.Delay_Group_ID);
+
+
+.output results.csv
+select * from flight_info f, state s, delayGroupInfo d where (f.OriginStateName = s.state) and (f.DepartureDelayGroups = d.Delay_Group_ID);
+
+
+
+
