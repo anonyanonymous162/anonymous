@@ -1,0 +1,18 @@
+Delay_Group_ID,Delay_Range,Description,Percentage_of_Flights,Average_Delay_Time,Flight_Count,Impact_Assessment,Root_Causes
+-1,Data Unavailable,Data Unavailable,N/A,N/A,N/A,N/A,N/A
+0,0 - 15 min,Minor Delay,10%,8 minutes,500,Low impact,Air Traffic Control
+1,16 - 30 min,Moderate Delay,15%,25 minutes,300,Moderate impact,Weather conditions
+2,31 - 60 min,Major Delay,20%,45 minutes,200,High impact,Aircraft maintenance
+3,61+ min,Severe Delay,5%,90 minutes,50,Critical impact,Security procedures
+4,N/A,Data Unavailable,N/A,N/A,N/A,N/A,N/A
+5,0 - 15 min,Minor Delay,12%,10 minutes,450,Low impact,Air Traffic Control
+6,16 - 30 min,Moderate Delay,18%,27 minutes,350,Moderate impact,Weather conditions
+7,31 - 60 min,Major Delay,22%,50 minutes,250,High impact,Aircraft maintenance
+8,61+ min,Severe Delay,7%,100 minutes,60,Critical impact,Security procedures
+9,0 - 15 min,Minor Delay,9%,7 minutes,480,Low impact,Air Traffic Control
+10,16 - 30 min,Moderate Delay,14%,23 minutes,320,Moderate impact,Weather conditions
+11,31 - 60 min,Major Delay,19%,42 minutes,220,High impact,Aircraft maintenance
+12,61+ min,Severe Delay,6%,80 minutes,45,Critical impact,Security procedures
+13,0 - 15 min,Minor Delay,11%,9 minutes,510,Low impact,Air Traffic Control
+14,16 - 30 min,Moderate Delay,16%,30 minutes,280,Moderate impact,Weather conditions
+15,31 - 60 min,Major Delay,21%,55 minutes,190,High impact,Aircraft maintenance

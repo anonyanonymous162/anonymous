@@ -1,0 +1,3 @@
+# pte_active.csv; nCol: 2; nRow: 299; nulleq
+drug_id --> is_active
+

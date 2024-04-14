@@ -1,0 +1,20 @@
+# InFine for PTC
+
+# "atom|X|molecule"
+PTC "atom|X|molecule" atom.csv      1 atom_nulleq_efd.txt      molecule.csv 0 molecule_nulleq_efd.txt 10
+
+# "connected|X|bond"
+PTC "connected|X|bond" connected.csv 2 connected_nulleq_efd.txt bond.csv 0 bond_nulleq_efd.txt   10
+
+# "bond|X|connected"
+## PTC "++bond|X|connected" bond.csv 0 bond_nulleq_efd.txt connected.csv 2 connected_nulleq_efd.txt  10
+
+# 3-join
+# "[connected|X|bond]|X|molecule"
+PTC "[connected|X|bond]|X|molecule" join_results/connected_JOIN_Bond.csv 3 join_results/connected_JOIN_Bond_nulleq_efd.txt molecule.csv  0 molecule_nulleq_efd.txt 10
+
+# "connected|X|[bond|X|molecule]"
+## PTC "++connected|X|[bond|X|molecule]" connected.csv 2 connected_nulleq_efd.txt join_results/bond_JOIN_Molecule.csv ?3? join_results/bond_JOIN_Molecule_nulleq_efd.txt 1
+
+# "connected|X|id1_[atom|X|molecule]"
+PTC "connected|X|id1_[atom|X|molecule]" connected.csv 0 connected_nulleq_efd.txt join_results/atom_JOIN_Molecule.csv 1 join_results/atom_JOIN_Molecule_nulleq_efd.txt 10

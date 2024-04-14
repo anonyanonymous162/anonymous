@@ -1,0 +1,26 @@
+-- queries
+
+Join attributes:
+f.DepartureDelayGroups is 34
+d.Delay_Group_ID is 0
+
+-- Join flight_info and delayGroupInfo
+select * from flight_info f, delayGroupInfo d where f.DepartureDelayGroups = d.Delay_Group_ID;
+
+1000 rows
+
+-- Auxiliary queries that are used for building the witness matrix
+
+Create view flight_info_rp as select (rowid -1) as id, * from flight_info;
+Create view  delayGroupInfo_rp as select (rowid -1) as id, * from delayGroupInfo;
+
+.header off
+
+.output w_flight_info.csv
+Select f.id from flight_info_rp f, delayGroupInfo d where f.DepartureDelayGroups = d.Delay_Group_ID;
+
+.output w_delay_info.csv
+Select d.id from flight_info f, delayGroupInfo_rp d where f.DepartureDelayGroups = d.Delay_Group_ID;
+
+
+

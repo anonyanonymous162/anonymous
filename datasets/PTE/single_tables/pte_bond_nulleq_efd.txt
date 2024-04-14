@@ -1,0 +1,4 @@
+# pte_bond.csv; nCol: 4; nRow: 9317; nulleq
+atom_id1 --> drug_id
+atom_id2 --> drug_id
+atom_id1*atom_id2 --> Arg3_y

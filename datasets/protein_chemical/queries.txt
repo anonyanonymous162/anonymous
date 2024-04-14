@@ -1,0 +1,40 @@
+
+__ Data description
+====================
+
+proteins appeared in the Covid-19 trial records in https://clinicaltrials.gov/, grouped by CATH classification, with URL linking back to the trial record at https://clinicaltrials.gov/
+
+-- Load data
+.mode csv
+.header on
+.import proteins_num.csv proteins
+.import chemical_num.csv chemical
+
+
+
+-- queries
+
+-- Join 
+select * from proteins p1, chemical p2 where p1.date = p2.date;
+
+
+
+-- Auxiliary queries that are used for building the witness matrix
+
+Create view proteins_rp as select (rowid -1) as id, * from proteins;
+Create view chemical_rp as select (rowid -1) as id, * from chemical;
+
+.header off
+
+.output w_proteins.csv
+Select p1.id from proteins_rp p1, chemical p2 where p1.date = p2.date;
+
+.output w_proteins_2.csv
+Select p2.id from proteins p1, chemical_rp p2 where p1.date = p2.date;
+
+
+.header on
+.output results_num.csv
+select * from proteins p1, chemical p2 where p1.date = p2.date;
+
+
