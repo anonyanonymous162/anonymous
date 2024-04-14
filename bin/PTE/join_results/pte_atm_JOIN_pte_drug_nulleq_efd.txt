@@ -1,0 +1,6 @@
+# pte_atm_JOIN_pte_drug.csv; nCol: 5; nRow: 9189; nulleq
+atom_id --> drug_id
+atom_id --> atom_type
+atom_id --> Arg3
+atom_id --> Arg4
+Arg3 --> atom_type

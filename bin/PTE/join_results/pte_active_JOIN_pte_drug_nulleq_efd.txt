@@ -1,0 +1,2 @@
+# pte_active_JOIN_pte_drug.csv; nCol: 2; nRow: 299; nulleq
+drug_id --> is_active

@@ -1,0 +1,7 @@
+# pte_bond_JOIN_pte_drug_JOIN_pte_active.csv; nCol: 5; nRow: 7994; nulleq
+drug_id --> is_active
+atom_id1 --> drug_id
+atom_id1 --> is_active
+atom_id2 --> drug_id
+atom_id2 --> is_active
+atom_id1*atom_id2 --> Arg3

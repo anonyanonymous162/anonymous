@@ -1,0 +1,25 @@
+# pte_atm_JOIN_pte_bond_JOIN_pte_atm_JOIN_pte_drug.csv; nCol: 12; nRow: 9317; nulleq
+drug_id --> drug_id_atm1
+drug_id --> drug_id_bnd
+atom_id2 --> drug_id
+atom_id2 --> drug_id_atm1
+atom_id2 --> drug_id_bnd
+atom_id2 --> atom_type_atm2
+atom_id2 --> Arg3
+atom_id2 --> Arg4_atm2
+atom_id --> drug_id
+atom_id --> drug_id_atm1
+atom_id --> atom_type_atm1
+atom_id --> Arg3_atm1
+atom_id --> Arg4_atm1
+atom_id --> drug_id_bnd
+drug_id_atm1 --> drug_id
+drug_id_atm1 --> drug_id_bnd
+Arg3_atm1 --> atom_type_atm1
+drug_id_bnd --> drug_id
+drug_id_bnd --> drug_id_atm1
+Arg3 --> atom_type_atm2
+atom_id2*atom_id --> Arg3_bnd
+atom_id2*Arg3_atm1 --> Arg3_bnd
+atom_id2*Arg4_atm1 --> atom_type_atm1
+atom_id*Arg3*Arg4_atm2 --> Arg3_bnd

@@ -1,0 +1,37 @@
+# InFine for PTE
+
+# "pte_atm|X|pte_drug"
+PTE "pte_atm|X|pte_drug" pte_atm_num.csv    0 pte_atm_nulleq_efd.txt    pte_drug_num.csv   0 pte_drug_nulleq_efd.txt 3
+
+# "pte_drug|X|pte_atm"
+## PTE "++pte_drug|X|pte_atm" pte_drug_num.csv   0 pte_drug_nulleq_efd.txt   pte_atm_num.csv    0 pte_atm_nulleq_efd.txt 3
+
+# "pte_active|X|pte_drug"
+PTE "pte_active|X|pte_drug" pte_active.csv 0 pte_active_nulleq_efd.txt pte_drug.csv   0 pte_drug_nulleq_efd.txt   10
+
+# "pte_drug|X|pte_active"
+## PTE "++pte_drug|X|pte_active" pte_drug.csv   0 pte_drug_nulleq_efd.txt   pte_active.csv 0 pte_active_nulleq_efd.txt 10
+
+# 3-join
+# "[pte_bond|X|pte_drug]|X|pte_active"
+PTE "[pte_bond|X|pte_drug]|X|pte_active" join_results/pte_bond_JOIN_pte_drug.csv 0 join_results/pte_bond_JOIN_pte_drug_nulleq_efd.txt pte_active.csv 0 pte_active_nulleq_efd.txt 10
+
+# "pte_active|X|[pte_bond|X|pte_drug]"
+## PTE "++pte_active|X|[pte_bond|X|pte_drug]" pte_active.csv 0 pte_active_nulleq_efd.txt join_results/pte_bond_JOIN_pte_drug.csv 0 join_results/pte_bond_JOIN_pte_drug_nulleq_efd.txt 10
+
+# "[pte_active|X|pte_drug]|X|pte_bond"
+## PTE "++[pte_active|X|pte_drug]|X|pte_bond" join_results/pte_active_JOIN_pte_drug.csv 0 join_results/pte_active_JOIN_pte_drug_nulleq_efd.txt pte_bond.csv 0 pte_bond_nulleq_efd.txt 10
+
+# "pte_bond|X|[pte_active|X|pte_drug]"
+## PTE "++pte_bond|X|[pte_active|X|pte_drug]" pte_bond.csv 0 pte_bond_nulleq_efd.txt join_results/pte_active_JOIN_pte_drug.csv 0 join_results/pte_active_JOIN_pte_drug_nulleq_efd.txt 10
+
+# 4-join
+# "pte_drug|X|[pte_atm|X|pte_bond|X|pte_atm]"
+## PTE "++pte_drug|X|[pte_atm|X|pte_bond|X|pte_atm]" pte_drug.csv 0 pte_drug_nulleq_efd.txt join_results/pte_atm_JOIN_pte_bond_JOIN_pte_atm.csv 8 join_results/pte_atm_JOIN_pte_bond_JOIN_pte_atm_nulleq_efd.txt 10
+
+# "[pte_atm|X|pte_bond|X|pte_atm]|X|pte_drug"
+PTE "[pte_atm|X|pte_bond|X|pte_atm]|X|pte_drug" join_results/pte_atm_JOIN_pte_bond_JOIN_pte_atm.csv  8 join_results/pte_atm_JOIN_pte_bond_JOIN_pte_atm_nulleq_efd.txt pte_drug.csv 0 pte_drug_nulleq_efd.txt   10
+
+# "[pte_atm|X|pte_bond]|X|[pte_atm|X|pte_drug]"
+## PTE "++[pte_atm|X|pte_bond]|X|[pte_atm|X|pte_drug]" join_results/pte_atm_JOIN_pte_bond.csv 6 join_results/pte_atm_JOIN_pte_bond_nulleq_efd.txt join_results/pte_atm_JOIN_pte_drug.csv 1 join_results/pte_atm_JOIN_pte_drug_nulleq_efd.txt 10
+

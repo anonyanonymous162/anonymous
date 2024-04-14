@@ -1,0 +1,14 @@
+# pte_atm_JOIN_pte_bond.csv; nCol: 8; nRow: 9317; nulleq
+atom_id --> drug_id_atm1
+atom_id --> atom_type
+atom_id --> Arg3_atm1
+atom_id --> Arg4
+atom_id --> drug_id_bnd
+drug_id_atm1 --> drug_id_bnd
+Arg3_atm1 --> atom_type
+drug_id_bnd --> drug_id_atm1
+atom_id2 --> drug_id_atm1
+atom_id2 --> drug_id_bnd
+atom_id*atom_id2 --> Arg3_bnd
+Arg3_atm1*atom_id2 --> Arg3_bnd
+Arg4*atom_id2 --> atom_type
